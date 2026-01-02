@@ -1,19 +1,11 @@
-// Navegação dos livros - compatível com GitHub Pages e Live Server
-document.querySelectorAll('.btn-livro').forEach(botao => {
+]document.querySelectorAll('.btn-livro').forEach(botao => {
   botao.addEventListener('click', () => {
     const livro = botao.dataset.livro;
 
-    // Descobre se está no GitHub Pages
-    const isGithubPages = window.location.hostname.includes('github.io');
+    // Base do site (funciona no GitHub Pages e no Live Server)
+    const base = window.location.origin + '/livraria-cibernetica';
 
-    // Nome do repositório (IMPORTANTE)
-    const repo = '/livraria-cibernetica';
-
-    if (isGithubPages) {
-      window.location.href = `${repo}/livros/${livro}.html`;
-    } else {
-      window.location.href = `./livros/${livro}.html`;
-    }
+    window.location.href = `${base}/livros/${livro}.html`;
   });
 });
 
